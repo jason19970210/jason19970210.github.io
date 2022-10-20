@@ -1,4 +1,6 @@
 ## Hexo & Github Page
+[![pages-build-deployment](https://github.com/jason19970210/jason19970210.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jason19970210/jason19970210.github.io/actions/workflows/pages/pages-build-deployment)
+
 link: https://jason19970210.github.io
 
 ### Setup environment
