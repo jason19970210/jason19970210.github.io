@@ -3,11 +3,11 @@ export const site = {
   title: 'Jason Hsu | Embedded Software Engineer',
   shortName: 'Jason Hsu',
   description:
-    'Jason (Yi-Cheih) Hsu is an embedded software engineer in Taipei who builds firmware, OTA updates, and device-to-cloud systems for networking and IoT hardware.',
+    'Jason (Yi-Cheih) Hsu is an embedded and backend engineer in Taipei who builds firmware, OTA updates, and the cloud services behind networking and IoT devices.',
   name: 'Yi-Cheih (Jason) Hsu',
-  positioning: 'Embedded software engineer for networking and IoT devices, from bootloader to cloud.',
+  positioning: 'Embedded and backend engineer for networking and IoT devices, from bootloader to cloud services.',
   intro:
-    'I build the software that runs on network hardware and the services that keep it up to date. Right now I own OTA upgrades for an OpenWrt-based cellular repeater controller at Airgain. Earlier I wrote U-Boot for Marvell switches, and I led a small team building a device-to-cloud management platform.',
+    'At Airgain, I own OTA upgrades for an OpenWrt-based cellular repeater controller and built and operate its FastAPI distribution service. Previously, I built a two-stage U-Boot for Marvell switches. At Morelink, I built one Go codebase for an OpenWrt agent and a GCP service, connected through RabbitMQ with MongoDB-backed REST APIs, and led a team of five building a repeater management platform deployed to six ISPs.',
   writingIntro:
     'Notes from the bench on networking, embedded Linux, and the bugs I had to understand before I could fix them.',
   email: 'jason19970210@gmail.com',
@@ -258,10 +258,11 @@ export const patents = [
   { href: 'https://patents.google.com/patent/TWI777910B/en', id: 'TW I777910', title: 'A Wheelchair with the Function of a Walker', year: '' },
 ];
 
-export const aboutIntro = 'Embedded software engineer in Taipei, working where hardware meets software.';
+export const aboutIntro = 'My university work focused on backend and IoT systems. I moved into embedded firmware in 2020.';
 
 export const aboutPoints = [
   { lead: 'Bootloader to cloud:', text: 'U-Boot, device trees, OpenWrt, OTA pipelines, and the services that keep devices in the field up to date.' },
+  { lead: 'Backend experience:', text: 'I developed a chatbot back end and designed its database architecture, and built a distributed crawler using Redis on Raspberry Pi. For ilivenet, I led an eight-person team and designed the architecture. The platform used a Flask API and Elasticsearch and reached 10,000 monthly active users within a month.' },
   { lead: 'Hard bugs on real hardware:', text: 'from OTA releases that reported success without flashing to a path-MTU black hole on cellular links.' },
   { lead: 'Security background:', text: 'M.S. thesis on post-quantum cryptography for vehicle forensics; co-founder and CTO of a digital forensics consultancy.' },
   { lead: 'Teaching:', text: 'taught Python to 30 engineers at Senao and lectured on vehicle network security at ITRI.' },
