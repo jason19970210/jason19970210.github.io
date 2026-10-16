@@ -52,7 +52,7 @@ crw-rw---- 1 root dialout 204, 68 Dec 16 16:01 /dev/ttyAMA4
 ```
 
 Let’s take a look into the Raspberry Pi 4 Model B GPIO Pinout:  
-![Figure 1 from "Raspberry Pi 4 with Multiple UART Interfaces"](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)  
+*Figure 1: image not reproduced here (source: [raspberrypi.com](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)).*  
 GPIO Pinout : [https://www.raspberrypi.com/documentation/computers/os.html#gpio-and-the-40-pin-header](https://www.raspberrypi.com/documentation/computers/os.html#gpio-and-the-40-pin-header)
 
 ## Hardware Setup
@@ -69,7 +69,7 @@ uart4 :  GPIO 12    GPIO 13         /dev/ttyAMA4
 ```
 
 PC setup with USB-to-UART Adapter :  
-![Figure 2 from "Raspberry Pi 4 with Multiple UART Interfaces"](/images/posts/uart-cover.jpg)  
+![Figure 2 from "Raspberry Pi 4 with Multiple UART Interfaces"](../../assets/posts/uart-cover.jpg)  
 FT232 : [https://www.waveshare.com/ft232-usb-uart-board-type-a.htm](https://www.waveshare.com/ft232-usb-uart-board-type-a.htm)
 
 Please make sure `GND` is connected correctly !  

@@ -3,7 +3,7 @@ import type { Project } from '../data/site';
 const { project, level = 2 } = Astro.props as { project: Project; level?: 2 | 3 };
 const H = `h${level}` as 'h2' | 'h3';
 ---
-<article class="proj">
+<article class="proj" id={project.slug}>
   <div>
     <H>{project.title}</H>
     <ul class="tags" aria-label="Technologies">{project.tags.map((t) => <li>{t}</li>)}</ul>

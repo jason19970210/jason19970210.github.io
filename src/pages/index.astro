@@ -2,9 +2,9 @@
 import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
 import { site, stack, jobs, projects } from '../data/site';
-import { allPosts } from '../lib';
+import { allPosts, wordCount, MIN_FEATURED_WORDS } from '../lib';
 
-const latest = (await allPosts()).slice(0, 4);
+const latest = (await allPosts()).filter((p) => wordCount(p) >= MIN_FEATURED_WORDS).slice(0, 4);
 const featuredJobs = jobs.slice(0, 3);
 const featuredProjects = projects.slice(0, 3);
 ---
@@ -12,7 +12,7 @@ const featuredProjects = projects.slice(0, 3);
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow"><b>Taipei</b> / firmware, OTA, device-to-cloud</p>
+        <p class="eyebrow"><b>Taipei</b> / firmware, OTA, <span class="nb">device-to-cloud</span></p>
         <h1>{site.name}</h1>
         <p class="positioning">{site.positioning}</p>
         <p class="intro">{site.intro}</p>
@@ -28,13 +28,15 @@ const featuredProjects = projects.slice(0, 3);
         </div>
       </div>
       <div class="stack-wrap">
-        <p class="stack-cap" id="stack-cap">Boot order of the stack I work on</p>
+        <p class="stack-cap" id="stack-cap">Boot order of the stack I work on. Each layer links to the role behind it.</p>
         <ol class="stack" aria-labelledby="stack-cap">
           {stack.map((s, i) => (
             <li style={`--i:${i}`}>
-              <span class="n">{String(i + 1).padStart(2, '0')}</span>
-              <span class="l">{s.layer}</span>
-              <span class="d">{s.detail}</span>
+              <a href={s.href}>
+                <span class="n">{String(i + 1).padStart(2, '0')}</span>
+                <span class="l">{s.layer}</span>
+                <span class="d">{s.detail}</span>
+              </a>
             </li>
           ))}
         </ol>
@@ -59,7 +61,7 @@ const featuredProjects = projects.slice(0, 3);
         {featuredJobs.map((j) => (
           <article class="card">
             <p class="meta">{j.period}</p>
-            <h3>{j.title}</h3>
+            <h3><a href={`/experience/#${j.id}`}>{j.title}</a></h3>
             <p><strong>{j.company}</strong></p>
             <p>{j.bullets[0]}</p>
           </article>
@@ -77,7 +79,7 @@ const featuredProjects = projects.slice(0, 3);
       <div class="cards three">
         {featuredProjects.map((p) => (
           <article class="card">
-            <h3>{p.title}</h3>
+            <h3><a href={`/projects/#${p.slug}`}>{p.title}</a></h3>
             <p>{p.summary}</p>
             <ul class="tags" aria-label="Technologies">{p.tags.slice(0, 5).map((t) => <li>{t}</li>)}</ul>
           </article>
@@ -93,16 +95,6 @@ const featuredProjects = projects.slice(0, 3);
         <a class="more" href="/writing/">All posts</a>
       </div>
       <PostList posts={latest} />
-    </div>
-  </section>
-
-  <section class="block cta" aria-labelledby="cta-h">
-    <div class="wrap">
-      <h2 id="cta-h">Working on devices that need to stay up to date? Let's talk.</h2>
-      <div class="btn-row">
-        <a class="btn primary" href={`mailto:${site.email}`}>Email</a>
-        <a class="btn" href={site.cv} download>Download CV</a>
-      </div>
     </div>
   </section>
 </Base>

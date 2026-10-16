@@ -30,7 +30,7 @@ All mentioned as default:
 -   Hold-Down Timer: 180 secs
 -   Flush Timer: 240 secs
 
-![Figure 1 from "RIPv2 Introduction"](https://www.n-study.com/wp-content/uploads/2021/10/en-rip-timer01.png)
+*Figure 1: image not reproduced here (source: [n-study.com](https://www.n-study.com/wp-content/uploads/2021/10/en-rip-timer01.png)).*
 
 ### Authentication
 

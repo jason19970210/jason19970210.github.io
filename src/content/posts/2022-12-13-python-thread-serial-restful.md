@@ -48,5 +48,3 @@ t2.start()
 ```
 
 ref: [https://gist.github.com/a-andreyev/1455f8cc024780188a6687b8399f7015](https://gist.github.com/a-andreyev/1455f8cc024780188a6687b8399f7015)
-
-## Output

@@ -18,7 +18,7 @@ Routing Information Protocol Next Generation for IPv6
 
 ### Packet Frame
 
-![Figure 1 from "RIPng Introduction"](https://download.huawei.com/mdl/image/download?uuid=f8ac22dfd01c4c23aea1be32dadfdf04)
+*Figure 1: image not reproduced here (source: [download.huawei.com](https://download.huawei.com/mdl/image/download?uuid=f8ac22dfd01c4c23aea1be32dadfdf04)).*
 
 Source: [https://support.huawei.com/enterprise/en/doc/EDOC1100058403/b0f8860e/ripng-packet-format](https://support.huawei.com/enterprise/en/doc/EDOC1100058403/b0f8860e/ripng-packet-format)
 
@@ -44,21 +44,21 @@ Source: [https://sites.google.com/site/amitsciscozone/ipv6/ripng](https://sites.
 
 It defines the IPv6 address of the next hop and is located **before** a group of IPv6-prefix RTEs that have the same next hop. The Metric field of a next hop RTE is always `0xFF`.
 
-![Figure 2 from "RIPng Introduction"](https://download.huawei.com/mdl/image/download?uuid=37df5f813d574fd799446e02c9e748b2)
+*Figure 2: image not reproduced here (source: [download.huawei.com](https://download.huawei.com/mdl/image/download?uuid=37df5f813d574fd799446e02c9e748b2)).*
 
 Source: [https://support.huawei.com/enterprise/en/doc/EDOC1100058403/b0f8860e/ripng-packet-format](https://support.huawei.com/enterprise/en/doc/EDOC1100058403/b0f8860e/ripng-packet-format)
 
-![Figure 3 from "RIPng Introduction"](/images/posts/ripng-1.png)
+![Figure 3 from "RIPng Introduction"](../../assets/posts/ripng-1.png)
 
 ##### 2\. IPv6 Prefix RTE
 
 It describes the destination IPv6 address and the cost in the RIPng routing table and is located **after** a next hop RTE. A next hop RTE can be followed by multiple different IPv6-prefix RTEs
 
-![Figure 4 from "RIPng Introduction"](https://download.huawei.com/mdl/image/download?uuid=911789767efb4bdd991960e3bc3f7185)
+*Figure 4: image not reproduced here (source: [download.huawei.com](https://download.huawei.com/mdl/image/download?uuid=911789767efb4bdd991960e3bc3f7185)).*
 
 Source: [https://support.huawei.com/enterprise/en/doc/EDOC1100058403/b0f8860e/ripng-packet-format](https://support.huawei.com/enterprise/en/doc/EDOC1100058403/b0f8860e/ripng-packet-format)
 
-![Figure 5 from "RIPng Introduction"](/images/posts/ripng-2.png)
+![Figure 5 from "RIPng Introduction"](../../assets/posts/ripng-2.png)
 
 ### [Timer / Intervals](https://www.rfc-editor.org/rfc/rfc2080.html#section-2.3)
 
@@ -158,7 +158,7 @@ ref: [https://bethepacketsite.wordpress.com/2016/04/22/ripv2-split-horizon-and-p
 
 ## Difference Between RIPv2
 
-![Figure 6 from "RIPng Introduction"](https://www.oreilly.com/api/v2/epubs/9780133149883/files/graphics/03tab12.jpg)
+*Figure 6: image not reproduced here (source: [oreilly.com](https://www.oreilly.com/api/v2/epubs/9780133149883/files/graphics/03tab12.jpg)).*
 
 Source: [https://www.oreilly.com/library/view/ccnp-routing-and/9780133149883/ch03lev3sec22.html](https://www.oreilly.com/library/view/ccnp-routing-and/9780133149883/ch03lev3sec22.html)
 

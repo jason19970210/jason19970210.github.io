@@ -20,14 +20,15 @@ export const site = {
 };
 
 export const stack = [
-  { layer: 'Bootloader', detail: 'U-Boot, device tree' },
-  { layer: 'OS', detail: 'Embedded Linux, OpenWrt' },
-  { layer: 'Device services', detail: 'SNMP agent, web GUI, Modbus TCP' },
-  { layer: 'Transport', detail: 'WireGuard, MQTT, AMQP' },
-  { layer: 'Cloud', detail: 'FastAPI, AWS IoT Core, GCP' },
+  { href: '/experience/#senao', layer: 'Bootloader', detail: 'U-Boot, device tree' },
+  { href: '/experience/#airgain', layer: 'OS', detail: 'Embedded Linux, OpenWrt' },
+  { href: '/experience/#airgain', layer: 'Device services', detail: 'SNMP agent, web GUI, Modbus TCP' },
+  { href: '/experience/#morelink', layer: 'Transport', detail: 'WireGuard, MQTT, AMQP' },
+  { href: '/experience/#airgain', layer: 'Cloud', detail: 'FastAPI, AWS IoT Core, GCP' },
 ];
 
 export type Job = {
+  id: string;
   title: string;
   company: string;
   place: string;
@@ -38,6 +39,7 @@ export type Job = {
 export const jobs: Job[] = [
   {
     title: 'Software Engineer',
+    id: 'airgain',
     company: 'Airgain, Inc.',
     place: 'Taipei, Taiwan',
     period: 'Apr 2025 - Present',
@@ -50,6 +52,7 @@ export const jobs: Job[] = [
   },
   {
     title: 'Solution Architect (Consultant)',
+    id: 'morelink',
     company: 'Morelink Technology Corporation',
     place: 'Taipei, Taiwan',
     period: 'Jul 2023 - Mar 2026',
@@ -62,6 +65,7 @@ export const jobs: Job[] = [
   },
   {
     title: 'Software Firmware Engineer',
+    id: 'senao',
     company: 'Senao Networks, Inc.',
     place: 'Taipei, Taiwan',
     period: 'Aug 2022 - May 2024',
@@ -74,6 +78,7 @@ export const jobs: Job[] = [
   },
   {
     title: 'Co-Founder & CTO',
+    id: 'skynet',
     company: 'Skynet Cybersecurity Consulting Co., Ltd.',
     place: 'Taipei, Taiwan',
     period: 'Jul 2020 - Present',
@@ -85,6 +90,7 @@ export const jobs: Job[] = [
   },
   {
     title: 'Cybersecurity Investigator & Software Developer',
+    id: 'max-minder',
     company: 'Max-Minder Technology Service Provider Co., Ltd.',
     place: 'Taoyuan, Taiwan',
     period: 'Jul 2020 - Jul 2022',
