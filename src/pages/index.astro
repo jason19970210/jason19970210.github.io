@@ -64,7 +64,7 @@ const featuredProjects = projects.slice(0, 3);
             <h3 class="t"><a href={`/experience/#${j.id}`}>{j.title}</a></h3>
             <p class="c">{j.company}</p>
             <p class="where">{j.period} &middot; {j.place}</p>
-            <ul><li>{j.bullets[0]}</li></ul>
+            <ul>{j.bullets.slice(0, 3).map((b) => <li>{b}</li>)}</ul>
           </li>
         ))}
       </ol>
