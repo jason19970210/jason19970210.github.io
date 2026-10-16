@@ -1,10 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import PostList from '../components/PostList.astro';
 import { site, stack, jobs, projects, aboutIntro, aboutPoints } from '../data/site';
-import { allPosts, wordCount, MIN_FEATURED_WORDS } from '../lib';
 
-const latest = (await allPosts()).filter((p) => wordCount(p) >= MIN_FEATURED_WORDS).slice(0, 4);
 const featuredJobs = jobs.slice(0, 3);
 const featuredProjects = projects.slice(0, 3);
 ---
@@ -61,16 +58,16 @@ const featuredProjects = projects.slice(0, 3);
         <h2 id="exp-h">Experience</h2>
         <span class="more-links"><a class="more" href="/experience/">Full experience, education and skills</a><a class="more" href="/experience/#community">Community &amp; volunteering</a></span>
       </div>
-      <div class="cards three">
+      <ol class="roles">
         {featuredJobs.map((j) => (
-          <article class="card">
-            <p class="meta">{j.period}</p>
-            <h3><a href={`/experience/#${j.id}`}>{j.title}</a></h3>
-            <p><strong>{j.company}</strong></p>
-            <p>{j.bullets[0]}</p>
-          </article>
+          <li class="role">
+            <h3 class="t"><a href={`/experience/#${j.id}`}>{j.title}</a></h3>
+            <p class="c">{j.company}</p>
+            <p class="where">{j.period} &middot; {j.place}</p>
+            <ul><li>{j.bullets[0]}</li></ul>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
   </section>
 
@@ -92,13 +89,4 @@ const featuredProjects = projects.slice(0, 3);
     </div>
   </section>
 
-  <section class="block" aria-labelledby="writing-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="writing-h">Latest writing</h2>
-        <a class="more" href="/writing/">All posts</a>
-      </div>
-      <PostList posts={latest} />
-    </div>
-  </section>
 </Base>
