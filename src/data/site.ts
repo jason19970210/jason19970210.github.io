@@ -145,6 +145,18 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: 'ilivenet',
+    title: 'ilivenet (startup, 2019)',
+    summary: 'A search platform for live streams across YouTube, Twitch and Facebook. It reached 10,000 monthly active users within its first month.',
+    highlights: [
+      'Led an 8-person team and designed the full architecture: crawlers, a Flask API in front of Elasticsearch, MongoDB, and a Node.js frontend on GCP, with crawl jobs scheduled across distributed IoT devices.',
+      'Elasticsearch cluster of five nodes plus a master node, with field-boosted relevance (tag and host above title), language detection, and phrase matching with slop for Chinese queries.',
+      "Background jobs removed offline streams by comparing each stream's thumbnail with the platform's offline image.",
+    ],
+    tags: ['Python', 'Flask', 'Elasticsearch', 'MongoDB', 'Node.js', 'GCP'],
+    linkNote: 'Not public',
+  },
+  {
     slug: 'temi-ros',
     title: 'Temi ROS-Based Robot System',
     summary:
@@ -175,6 +187,17 @@ export const projects: Project[] = [
     tags: ['Python', 'nmap', 'networking'],
     link: { label: 'github.com/jason19970210/NetScanner', href: 'https://github.com/jason19970210/NetScanner' },
   },
+  {
+    slug: 'musicai',
+    title: 'MusicAI (2019)',
+    summary: 'Personalized music recommendation using deep reinforcement learning on user behavior.',
+    highlights: [
+      'Implemented key iOS features and ported the recommendation model to the server.',
+      "Judges' Award, 2019 Mobile Application Innovation Contest.",
+    ],
+    tags: ['iOS', 'Swift', 'Deep reinforcement learning'],
+    linkNote: 'Not public',
+  },
 ];
 
 export const education = [
@@ -192,6 +215,17 @@ export const education = [
     period: 'Sep 2015 - Jun 2020',
     note: 'Transferred from Industrial Design in Feb 2018.',
   },
+];
+
+export const awards = [
+  { title: "Excellence Award, NCU Dept. of Communication Engineering project competition, as project lead for V-GNMS", year: '2024' },
+  { title: "Special Judges' Award, Civil IoT Taiwan Datathon", year: '2021' },
+  { title: "Judges' Award, ROS-Based Innovation Application Proposal", year: '2020' },
+  { title: 'Silver Medal, gSIC-REAT (Rehabilitation Engineering and Assistive Technology)', year: '2020' },
+  { title: "Judges' Award, Mobile Application Innovation Contest, for MusicAI", year: '2019' },
+  { title: 'Greatest Design Award, Startup Weekend Education', year: '2019' },
+  { title: 'Greatest Design Award, Startup Weekend Education', year: '2018' },
+  { title: 'Merit Award, Apple App Mobile Innovation', year: '2018' },
 ];
 
 export const certification = 'Google Cybersecurity Certificate (2024)';
@@ -219,9 +253,9 @@ export const thesis = {
 };
 
 export const patents = [
-  { id: 'TW I814478', title: 'Event Recording System and Vehicle-Mounted Event Recording Device', year: '2023' },
-  { id: 'TW I836508', title: 'Vehicle Event Handling Method', year: '2024' },
-  { id: 'TW I777910', title: 'A Wheelchair with the Function of a Walker', year: '' },
+  { href: 'https://patents.google.com/patent/TWI814478B/en', id: 'TW I814478', title: 'Event Recording System and Vehicle-Mounted Event Recording Device', year: '2023' },
+  { href: 'https://patents.google.com/patent/TWI836508B/en', id: 'TW I836508', title: 'Vehicle Event Handling Method', year: '2024' },
+  { href: 'https://patents.google.com/patent/TWI777910B/en', id: 'TW I777910', title: 'A Wheelchair with the Function of a Walker', year: '' },
 ];
 
 export const aboutIntro = 'Embedded software engineer in Taipei, working where hardware meets software.';
@@ -244,8 +278,8 @@ export const mediumPosts = [
 ];
 
 export const community = [
-  'AWS Community Day Taiwan (first edition), 2022',
-  'PyCon APAC, 2019, 2021, 2022',
+  'AWS Community Day Taiwan, 2022-2026',
+  'PyCon APAC, 2019-2025',
   'Women Who Code: Python mentor, 2021',
   'Women In Tech',
   'GDSC National Central University, 2021',

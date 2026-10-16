@@ -23,11 +23,9 @@ import { jobs, community, talks, earlier, education, certification, skills } fro
     <ol class="roles">
       {education.map((e) => (
         <li class="role">
-          <div class="role-head">
-            <h3><span class="t">{e.degree}</span>, <span class="c">{e.school}</span></h3>
-            <p class="when">{e.period}</p>
-          </div>
-          <p class="where">{e.place}</p>
+          <h3 class="t">{e.degree}</h3>
+          <p class="c">{e.school}</p>
+          <p class="where">{e.period} &middot; {e.place}</p>
           <p class="note">{e.note}</p>
         </li>
       ))}
@@ -37,7 +35,7 @@ import { jobs, community, talks, earlier, education, certification, skills } fro
 
     <h2 class="subhead">Skills</h2>
     <dl class="deflist">
-      {skills.map((s) => (<><dt>{s.group}</dt><dd>{s.items}</dd></>))}
+      {skills.map((s) => (<div class="skill-row"><dt>{s.group}</dt><dd>{s.items}</dd></div>))}
     </dl>
   </div></div>
 </Base>

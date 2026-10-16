@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-import { publication, thesis, patents } from '../data/site';
+import { publication, thesis, patents, awards } from '../data/site';
 ---
-<Base title="Publications & Patents" description="Publications, thesis, and Taiwan patents of Jason (Yi-Cheih) Hsu on vehicle forensics and post-quantum cryptography.">
+<Base title="Publications & Awards" description="Publications, thesis, Taiwan patents, and awards of Jason (Yi-Cheih) Hsu on vehicle forensics and post-quantum cryptography.">
   <div class="page-head"><div class="wrap">
-    <p class="eyebrow">Publications &amp; Patents</p>
-    <h1>Papers and patents</h1>
+    <p class="eyebrow">Publications &amp; Awards</p>
+    <h1>Publications &amp; Awards</h1>
   </div></div>
   <div class="page-body"><div class="wrap">
     <div class="pub">
@@ -20,13 +20,20 @@ import { publication, thesis, patents } from '../data/site';
     <div class="pub">
       <p class="kind">Patents (Taiwan, co-inventor)</p>
       <table class="pub-table">
-        <caption class="sr-only" style="position:absolute;left:-9999px">Taiwan patents, co-inventor</caption>
+        <caption class="sr-only">Taiwan patents, co-inventor</caption>
         <tbody>
           {patents.map((p) => (
-            <tr><th scope="row">{p.id}</th><td>{p.title}{p.year && ` (${p.year})`}</td></tr>
+            <tr><th scope="row"><a href={p.href} rel="noopener">{p.id}</a><span class="sr-only"> (Google Patents, external site)</span></th><td>{p.title}{p.year && ` (${p.year})`}</td></tr>
           ))}
         </tbody>
       </table>
     </div>
+    <h2 class="subhead" id="awards">Awards</h2>
+    <table class="pub-table awards">
+      <caption class="sr-only">Awards, newest first</caption>
+      <tbody>
+        {awards.map((a) => (<tr><th scope="row">{a.year}</th><td>{a.title}</td></tr>))}
+      </tbody>
+    </table>
   </div></div>
 </Base>

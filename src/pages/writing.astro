@@ -13,13 +13,7 @@ const years = [...new Set(posts.map((p) => p.data.date.getUTCFullYear()))];
     <p class="lede">{site.writingIntro}</p>
   </div></div>
   <div class="page-body"><div class="wrap">
-    {years.map((y) => (
-      <>
-        <h2 class="year-label">{y}</h2>
-        <PostList posts={posts.filter((p) => p.data.date.getUTCFullYear() === y)} />
-      </>
-    ))}
-    <h2 class="subhead" id="medium">More on Medium</h2>
+    <h2 class="subhead first" id="medium">More on Medium</h2>
     <p class="muted">Technical write-ups that live on <a href={site.medium.href} rel="me noopener">Medium</a>.</p>
     <ul class="post-list">
       {mediumPosts.map((m) => (
@@ -32,5 +26,12 @@ const years = [...new Set(posts.map((p) => p.data.date.getUTCFullYear()))];
         </li>
       ))}
     </ul>
+    <h2 class="subhead" id="on-this-site">On this site</h2>
+    {years.map((y) => (
+      <>
+        <h2 class="year-label">{y}</h2>
+        <PostList posts={posts.filter((p) => p.data.date.getUTCFullYear() === y)} />
+      </>
+    ))}
   </div></div>
 </Base>
