@@ -218,7 +218,7 @@ export const education = [
 ];
 
 export const awards = [
-  { title: "Excellence Award, NCU Dept. of Communication Engineering project competition, as project lead for V-GNMS", year: '2024' },
+  { title: "Excellence Award, NCU Dept. of Communication Engineering project competition, for V-GNMS (role: leadership)", year: '2024' },
   { title: "Special Judges' Award, Civil IoT Taiwan Datathon", year: '2021' },
   { title: "Judges' Award, ROS-Based Innovation Application Proposal", year: '2020' },
   { title: 'Silver Medal, gSIC-REAT (Rehabilitation Engineering and Assistive Technology)', year: '2020' },
