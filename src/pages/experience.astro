@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import JobItem from '../components/JobItem.astro';
+import { jobs, earlier, education, certification, skills } from '../data/site';
+---
+<Base title="Experience" description="Experience of Jason (Yi-Cheih) Hsu: OTA and firmware at Airgain, U-Boot and L2/L3 switch software at Senao, a device-to-cloud platform at Morelink, and DFIR at Skynet.">
+  <div class="page-head"><div class="wrap">
+    <p class="eyebrow">Experience</p>
+    <h1>Where I have worked</h1>
+  </div></div>
+  <div class="page-body"><div class="wrap">
+    <h2 class="subhead" style="margin-top:0">Work</h2>
+    <ol class="timeline">{jobs.map((j) => <JobItem job={j} />)}</ol>
+    <p class="muted"><strong>Earlier:</strong> {earlier}</p>
+
+    <h2 class="subhead">Education</h2>
+    <ol class="timeline">
+      {education.map((e) => (
+        <li class="job">
+          <div class="when"><span>{e.period}</span><span>{e.place}</span></div>
+          <div>
+            <h3>{e.degree}</h3>
+            <p class="co">{e.school}</p>
+            <p class="muted">{e.note}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <h2 class="subhead">Certification</h2>
+    <p>{certification}</p>
+
+    <h2 class="subhead">Skills</h2>
+    <dl class="deflist">
+      {skills.map((s) => (<><dt>{s.group}</dt><dd>{s.items}</dd></>))}
+    </dl>
+  </div></div>
+</Base>

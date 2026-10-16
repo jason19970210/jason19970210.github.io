@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title="Contact" description="Contact Jason (Yi-Cheih) Hsu, embedded software engineer based in Taipei, Taiwan.">
+  <div class="page-head"><div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h1>Get in touch</h1>
+    <p class="lede">Based in {site.location}.</p>
+  </div></div>
+  <div class="page-body"><div class="wrap">
+    <ul class="contact-list">
+      <li><a href={`mailto:${site.email}`}><span class="k">Email</span><span>{site.email}</span></a></li>
+      <li><a href={site.linkedin.href} rel="me noopener"><span class="k">LinkedIn</span><span>{site.linkedin.label}</span></a></li>
+      <li><a href={site.github.href} rel="me noopener"><span class="k">GitHub</span><span>{site.github.label}</span></a></li>
+    </ul>
+    <div class="btn-row"><a class="btn" href={site.cv} download>Download CV</a></div>
+  </div></div>
+</Base>

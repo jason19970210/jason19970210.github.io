@@ -1,42 +1,26 @@
-## Hexo & Github Page
-[![pages-build-deployment](https://github.com/jason19970210/jason19970210.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jason19970210/jason19970210.github.io/actions/workflows/pages/pages-build-deployment)
+# jason19970210.github.io
 
-link: https://jason19970210.github.io
+Personal site of Jason (Yi-Cheih) Hsu, built with [Astro](https://astro.build) as a static site with no client-side JavaScript. Deployed to https://jason19970210.github.io (root path) by GitHub Pages.
 
-### Setup environment
-```shell
-$ npm install hexo-cli hexo-deployer-git -g
+## Local development
+
+Requires Node 22.12 or newer.
+
+```sh
+npm install
+npm run dev       # http://localhost:4321, live reload
+npm run build     # static output in dist/
+npm run preview   # serve dist/ at http://localhost:4321
 ```
 
-### Init repo & Install dependencies
-```shell
-$ hexo init personal-blog
-$ npm i
-```
+## Structure
 
-### Setup configuration (Github SSH key required)
-```shell
-$ vim _config.yml
+- `src/data/site.ts`: site copy, experience, projects, publications.
+- `src/content/posts/*.md`: blog posts (content collection). Frontmatter: `title`, `date`, `category`, `slug`, `tags`.
+  A post is served at `/YYYY/MM/DD/<category>/<slug>/`, the same URLs as the old Hexo blog.
+- `src/pages/`: pages, RSS feed (`/rss.xml`), and the post route.
+- `public/`: favicon, Open Graph image, and the CV PDF (`/Yi-Cheih_Hsu_CV.pdf`).
 
+## Deploy
 
-deploy:
-  type: git
-  repository: git@github.com:jason19970210/jason19970210.github.io.git
-  branch: main
-```
-
-### Add a README.md to Github repo
-```shell
-$ echo '## Hexo & Github Page' > ./source/README.md
-$ vim _config.yml
-
-
-# Directory
-...
-skip_render: README.md
-```
-
-### Generate & deploy
-```
-$ hexo g -d
-```
+`.github/workflows/deploy.yml` builds with `withastro/action` and publishes with `actions/deploy-pages` on push to `main`. In the repository settings, set Pages source to "GitHub Actions". The previous Hexo build is preserved on the `hexo-archive` branch.

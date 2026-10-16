@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { publication, thesis, patents } from '../data/site';
+---
+<Base title="Publications & Patents" description="Publications, thesis, and Taiwan patents of Jason (Yi-Cheih) Hsu on vehicle forensics and post-quantum cryptography.">
+  <div class="page-head"><div class="wrap">
+    <p class="eyebrow">Publications &amp; Patents</p>
+    <h1>Papers and patents</h1>
+  </div></div>
+  <div class="page-body"><div class="wrap">
+    <div class="pub">
+      <p class="kind">Publication</p>
+      <p>{publication.authors} <span class="title">&ldquo;{publication.title}&rdquo;</span> {publication.venue}</p>
+      <p><a href={publication.doi} rel="noopener">{publication.doi}</a></p>
+    </div>
+    <div class="pub">
+      <p class="kind">Thesis</p>
+      <p><span class="title">&ldquo;{thesis.title}&rdquo;</span> {thesis.detail}</p>
+    </div>
+    <div class="pub">
+      <p class="kind">Patents (Taiwan, co-inventor)</p>
+      <table class="pub-table">
+        <caption class="sr-only" style="position:absolute;left:-9999px">Taiwan patents, co-inventor</caption>
+        <tbody>
+          {patents.map((p) => (
+            <tr><th scope="row">{p.id}</th><td>{p.title}{p.year && ` (${p.year})`}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div></div>
+</Base>

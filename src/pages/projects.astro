@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectItem from '../components/ProjectItem.astro';
+import { projects } from '../data/site';
+---
+<Base title="Projects" description="Projects by Jason Hsu: an ESP32 Wi-Fi MAC in C, a post-quantum vehicle forensics system, a Temi robot service, and smaller tools.">
+  <div class="page-head"><div class="wrap">
+    <p class="eyebrow">Projects</p>
+    <h1>Things I have built</h1>
+  </div></div>
+  <div class="page-body"><div class="wrap">
+    {projects.map((p) => <ProjectItem project={p} />)}
+  </div></div>
+</Base>

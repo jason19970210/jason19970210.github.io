@@ -1,0 +1,25 @@
+---
+import type { Project } from '../data/site';
+const { project, level = 2 } = Astro.props as { project: Project; level?: 2 | 3 };
+const H = `h${level}` as 'h2' | 'h3';
+---
+<article class="proj">
+  <div>
+    <H>{project.title}</H>
+    <ul class="tags" aria-label="Technologies">{project.tags.map((t) => <li>{t}</li>)}</ul>
+  </div>
+  <div>
+    <p class="summary">{project.summary}</p>
+    <ul>{project.highlights.map((h) => <li>{h}</li>)}</ul>
+    <p class="linkline">
+      {project.link ? (
+        <>
+          <a href={project.link.href} rel="noopener">{project.link.label}</a>
+          {project.link.note && <span class="muted"> &mdash; {project.link.note}</span>}
+        </>
+      ) : (
+        <span class="badge-private">{project.linkNote}</span>
+      )}
+    </p>
+  </div>
+</article>

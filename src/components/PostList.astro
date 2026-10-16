@@ -1,0 +1,15 @@
+---
+import { fmtDate, isoDate, postPath, type Post } from '../lib';
+const { posts } = Astro.props as { posts: Post[] };
+---
+<ul class="post-list">
+  {posts.map((p) => (
+    <li>
+      <a class="row" href={postPath(p)}>
+        <time datetime={isoDate(p.data.date)}>{fmtDate(p.data.date)}</time>
+        <span class="t">{p.data.title}</span>
+        <span class="cat">{p.data.category}</span>
+      </a>
+    </li>
+  ))}
+</ul>

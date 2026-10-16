@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import { site, stack, jobs, projects } from '../data/site';
+import { allPosts } from '../lib';
+
+const latest = (await allPosts()).slice(0, 4);
+const featuredJobs = jobs.slice(0, 3);
+const featuredProjects = projects.slice(0, 3);
+---
+<Base>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow"><b>Taipei</b> / firmware, OTA, device-to-cloud</p>
+        <h1>{site.name}</h1>
+        <p class="positioning">{site.positioning}</p>
+        <p class="intro">{site.intro}</p>
+        <div class="btn-row">
+          <a class="btn primary" href={site.cv} download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16" /></svg>
+            Download CV
+          </a>
+          <a class="btn" href={`mailto:${site.email}`}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+            Email
+          </a>
+        </div>
+      </div>
+      <div class="stack-wrap">
+        <p class="stack-cap" id="stack-cap">Boot order of the stack I work on</p>
+        <ol class="stack" aria-labelledby="stack-cap">
+          {stack.map((s, i) => (
+            <li style={`--i:${i}`}>
+              <span class="n">{String(i + 1).padStart(2, '0')}</span>
+              <span class="l">{s.layer}</span>
+              <span class="d">{s.detail}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block about" id="about" aria-labelledby="about-h">
+    <div class="wrap about-grid">
+      <h2 id="about-h">About</h2>
+      <p>{site.about}</p>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="exp-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="exp-h">Experience</h2>
+        <a class="more" href="/experience/">Full experience, education and skills</a>
+      </div>
+      <div class="cards three">
+        {featuredJobs.map((j) => (
+          <article class="card">
+            <p class="meta">{j.period}</p>
+            <h3>{j.title}</h3>
+            <p><strong>{j.company}</strong></p>
+            <p>{j.bullets[0]}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="proj-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="proj-h">Projects</h2>
+        <a class="more" href="/projects/">All projects</a>
+      </div>
+      <div class="cards three">
+        {featuredProjects.map((p) => (
+          <article class="card">
+            <h3>{p.title}</h3>
+            <p>{p.summary}</p>
+            <ul class="tags" aria-label="Technologies">{p.tags.slice(0, 5).map((t) => <li>{t}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="writing-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="writing-h">Latest writing</h2>
+        <a class="more" href="/writing/">All posts</a>
+      </div>
+      <PostList posts={latest} />
+    </div>
+  </section>
+
+  <section class="block cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 id="cta-h">Working on devices that need to stay up to date? Let's talk.</h2>
+      <div class="btn-row">
+        <a class="btn primary" href={`mailto:${site.email}`}>Email</a>
+        <a class="btn" href={site.cv} download>Download CV</a>
+      </div>
+    </div>
+  </section>
+</Base>
