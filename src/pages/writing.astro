@@ -1,8 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
-import { site } from '../data/site';
-import { allPosts } from '../lib';
+import { site, mediumPosts } from '../data/site';
+import { allPosts, fmtDate } from '../lib';
 
 const posts = await allPosts();
 const years = [...new Set(posts.map((p) => p.data.date.getUTCFullYear()))];
@@ -19,5 +19,18 @@ const years = [...new Set(posts.map((p) => p.data.date.getUTCFullYear()))];
         <PostList posts={posts.filter((p) => p.data.date.getUTCFullYear() === y)} />
       </>
     ))}
+    <h2 class="subhead" id="medium">More on Medium</h2>
+    <p class="muted">Technical write-ups that live on <a href={site.medium.href} rel="me noopener">Medium</a>.</p>
+    <ul class="post-list">
+      {mediumPosts.map((m) => (
+        <li>
+          <a class="row ext" href={m.href} rel="noopener">
+            <time datetime={m.date}>{fmtDate(new Date(m.date))}</time>
+            <span class="t">{m.title}</span>
+            <span class="cat">medium.com <span aria-hidden="true">&#8599;</span><span class="sr-only"> (external site)</span></span>
+          </a>
+        </li>
+      ))}
+    </ul>
   </div></div>
 </Base>

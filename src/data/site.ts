@@ -8,11 +8,10 @@ export const site = {
   positioning: 'Embedded software engineer for networking and IoT devices, from bootloader to cloud.',
   intro:
     'I build the software that runs on network hardware and the services that keep it up to date. Right now I own OTA upgrades for an OpenWrt-based cellular repeater controller at Airgain. Earlier I wrote U-Boot for Marvell switches, and I led a small team building a device-to-cloud management platform.',
-  about:
-    "I started in industrial design, moved to information management, and ended up in a security lab writing my master's thesis on post-quantum cryptography for vehicle forensics. I have used Linux since university, starting with lab network administration. Most of my work sits where hardware meets software: bootloaders, device trees, Layer 2/3 switch stacks, OTA pipelines, and the cloud services that talk to devices in the field. I also co-founded a digital forensics consultancy and serve as its CTO. I like hard bugs on real hardware, and I like teaching what I learn from them. I taught Python to 30 engineers at Senao and lectured on vehicle network security at ITRI.",
   writingIntro:
     'Notes from the bench on networking, embedded Linux, and the bugs I had to understand before I could fix them.',
   email: 'jason19970210@gmail.com',
+  medium: { label: 'medium.com/@jason19970210', href: 'https://medium.com/@jason19970210' },
   linkedin: { label: 'linkedin.com/in/jason19970210', href: 'https://www.linkedin.com/in/jason19970210' },
   github: { label: 'github.com/jason19970210', href: 'https://github.com/jason19970210' },
   cv: '/Yi-Cheih_Hsu_CV.pdf',
@@ -176,17 +175,6 @@ export const projects: Project[] = [
     tags: ['Python', 'nmap', 'networking'],
     link: { label: 'github.com/jason19970210/NetScanner', href: 'https://github.com/jason19970210/NetScanner' },
   },
-  {
-    slug: 'python-course-2021',
-    title: 'Python Course 2021',
-    summary: 'Materials from introductory Python courses in 2021.',
-    highlights: [
-      'Slides, outlines, and sample code for a Flask web development course and a web crawler course.',
-      'Weekly outlines for beginner Python sessions, from setup and variables to loops, functions, and a first crawler.',
-    ],
-    tags: ['Python', 'Flask', 'Requests', 'BeautifulSoup', 'teaching'],
-    link: { label: 'github.com/jason19970210/Python_Course_2021', href: 'https://github.com/jason19970210/Python_Course_2021' },
-  },
 ];
 
 export const education = [
@@ -234,4 +222,42 @@ export const patents = [
   { id: 'TW I814478', title: 'Event Recording System and Vehicle-Mounted Event Recording Device', year: '2023' },
   { id: 'TW I836508', title: 'Vehicle Event Handling Method', year: '2024' },
   { id: 'TW I777910', title: 'A Wheelchair with the Function of a Walker', year: '' },
+];
+
+export const aboutIntro = 'Embedded software engineer in Taipei, working where hardware meets software.';
+
+export const aboutPoints = [
+  { lead: 'Bootloader to cloud:', text: 'U-Boot, device trees, OpenWrt, OTA pipelines, and the services that keep devices in the field up to date.' },
+  { lead: 'Hard bugs on real hardware:', text: 'from OTA releases that reported success without flashing to a path-MTU black hole on cellular links.' },
+  { lead: 'Security background:', text: 'M.S. thesis on post-quantum cryptography for vehicle forensics; co-founder and CTO of a digital forensics consultancy.' },
+  { lead: 'Teaching:', text: 'taught Python to 30 engineers at Senao and lectured on vehicle network security at ITRI.' },
+];
+
+export const mediumPosts = [
+  { date: '2024-01-25', title: 'A Step-by-Step Guide How to Deal With Expired GPG Keys', href: 'https://jason19970210.medium.com/a-step-by-step-guide-how-to-deal-with-expired-gpg-keys-72277e227e75' },
+  { date: '2024-01-19', title: 'Minimum L3 IP Packet with Scapy in Python & Wireshark', href: 'https://jason19970210.medium.com/minimum-tcp-packet-with-scapy-in-python-wireshark-5ee93198a522' },
+  { date: '2023-09-10', title: 'Golang Works with Shared Object Through cgo (.so Not Found Issue)', href: 'https://jason19970210.medium.com/golang-works-with-shared-object-through-cgo-so-not-found-issue-46a8ce423f8b' },
+  { date: '2023-09-09', title: 'Great News from ngrok with Static Domains', href: 'https://jason19970210.medium.com/great-news-from-ngrok-with-static-domains-efd0c158cdde' },
+  { date: '2023-05-23', title: 'To Beginners Learning with Minimum Python Environment Setup', href: 'https://jason19970210.medium.com/to-beginners-learning-with-minimum-python-environment-setup-d37a6cdc6d3d' },
+  { date: '2023-05-17', title: 'Proper Setup for Netplan YAML File Permission', href: 'https://jason19970210.medium.com/proper-way-to-setup-netplan-yaml-file-permission-867da8eb026a' },
+  { date: '2023-03-16', title: 'Back to Root View: Pure SwiftUI for iOS 16 with NavigationStack & NavigationDestination', href: 'https://jason19970210.medium.com/back-to-root-view-pure-swiftui-for-ios-16-with-navigationstack-navigationdestination-a054a3550851' },
+];
+
+export const community = [
+  'AWS Community Day Taiwan (first edition), 2022',
+  'PyCon APAC, 2019, 2021, 2022',
+  'Women Who Code: Python mentor, 2021',
+  'Women In Tech',
+  'GDSC National Central University, 2021',
+  'NCtfU CTF',
+  'Open Up Summit, 2018',
+  'FLYTECH rural maker camp, Zhiben, Taitung: video editing, 3D modeling and printing',
+];
+
+export const talks = [
+  'ITRI: IoV security course (2021), red/blue team course (2021), AMR course (2022)',
+  'ITE Tech: BT/BLE protocol and security issues (Jul 2022)',
+  'Digital forensics basics for a military training unit (2021)',
+  'iOS development course, Chang Gung University (2019)',
+  'Taught Python to 30 engineers at Senao',
 ];

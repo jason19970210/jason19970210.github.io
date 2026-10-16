@@ -2,11 +2,11 @@
 import type { Job } from '../data/site';
 const { job } = Astro.props as { job: Job };
 ---
-<li class="job" id={job.id}>
-  <div class="when"><span>{job.period}</span><span>{job.place}</span></div>
-  <div>
-    <h3>{job.title}</h3>
-    <p class="co">{job.company}</p>
-    <ul>{job.bullets.map((b) => <li>{b}</li>)}</ul>
+<li class="role" id={job.id}>
+  <div class="role-head">
+    <h3><span class="t">{job.title}</span>, <span class="c">{job.company}</span></h3>
+    <p class="when">{job.period}</p>
   </div>
+  <p class="where">{job.place}</p>
+  <ul>{job.bullets.map((b) => <li>{b}</li>)}</ul>
 </li>

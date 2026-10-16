@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
-import { site, stack, jobs, projects } from '../data/site';
+import { site, stack, jobs, projects, aboutIntro, aboutPoints } from '../data/site';
 import { allPosts, wordCount, MIN_FEATURED_WORDS } from '../lib';
 
 const latest = (await allPosts()).filter((p) => wordCount(p) >= MIN_FEATURED_WORDS).slice(0, 4);
@@ -26,6 +26,7 @@ const featuredProjects = projects.slice(0, 3);
             Email
           </a>
         </div>
+        <p class="elsewhere">Also on <a href={site.linkedin.href} rel="me noopener">LinkedIn</a>, <a href={site.github.href} rel="me noopener">GitHub</a>, <a href={site.medium.href} rel="me noopener">Medium</a>.</p>
       </div>
       <div class="stack-wrap">
         <p class="stack-cap" id="stack-cap">Boot order of the stack I work on. Each layer links to the role behind it.</p>
@@ -47,7 +48,10 @@ const featuredProjects = projects.slice(0, 3);
   <section class="block about" id="about" aria-labelledby="about-h">
     <div class="wrap about-grid">
       <h2 id="about-h">About</h2>
-      <p>{site.about}</p>
+      <div class="about-copy">
+        <p class="about-intro">{aboutIntro}</p>
+        <ul class="points">{aboutPoints.map((a) => <li><strong>{a.lead}</strong> {a.text}</li>)}</ul>
+      </div>
     </div>
   </section>
 
@@ -55,7 +59,7 @@ const featuredProjects = projects.slice(0, 3);
     <div class="wrap">
       <div class="section-head">
         <h2 id="exp-h">Experience</h2>
-        <a class="more" href="/experience/">Full experience, education and skills</a>
+        <span class="more-links"><a class="more" href="/experience/">Full experience, education and skills</a><a class="more" href="/experience/#community">Community &amp; volunteering</a></span>
       </div>
       <div class="cards three">
         {featuredJobs.map((j) => (

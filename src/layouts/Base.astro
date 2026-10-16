@@ -44,7 +44,7 @@ const jsonLd = {
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="180x180" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="alternate" type="application/rss+xml" title="Jason Hsu: Writing" href="/rss.xml" />
@@ -70,11 +70,10 @@ const jsonLd = {
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/" aria-label="Jason Hsu, home">
-          <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-            <rect width="32" height="32" rx="7" fill="currentColor" />
-            <circle cx="9.5" cy="16" r="3.4" fill="none" stroke="var(--bg)" stroke-width="2.2" />
-            <g fill="var(--bg)"><circle cx="17.5" cy="12.5" r="1.9" /><circle cx="23.5" cy="12.5" r="1.9" /><circle cx="17.5" cy="19.5" r="1.9" /><circle cx="23.5" cy="19.5" r="1.9" /></g>
-          </svg>
+          <picture>
+            <source srcset="/brand-static.png" media="(prefers-reduced-motion: reduce)" />
+            <img src="/brand.webp" width="47" height="30" alt="" />
+          </picture>
           Jason Hsu
         </a>
         <nav aria-label="Primary">
@@ -96,6 +95,7 @@ const jsonLd = {
           <li><a href={`mailto:${site.email}`}>Email</a></li>
           <li><a href={site.linkedin.href} rel="me noopener">LinkedIn</a></li>
           <li><a href={site.github.href} rel="me noopener">GitHub</a></li>
+          <li><a href={site.medium.href} rel="me noopener">Medium</a></li>
           <li><a href="/rss.xml">RSS</a></li>
         </ul>
       </div>

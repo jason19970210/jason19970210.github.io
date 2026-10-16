@@ -323,3 +323,38 @@ section.block { padding-block: clamp(3rem, 7vw, 5.5rem); border-top: 1px solid v
   .nav a { padding-inline: 0.2rem; }
 }
 @media (max-width: 21rem) { .nav { flex-wrap: wrap; justify-content: center; } }
+
+/* Round 3 */
+.brand img { display: block; width: auto; height: 1.9rem; flex: none; }
+.brand picture { display: block; flex: none; }
+.about-copy { max-width: var(--prose); }
+.about-intro { font-size: 1.2rem; font-weight: 500; color: var(--ink); margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+.points { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
+.points li { position: relative; padding-left: 1.4rem; color: var(--ink-2); }
+.points li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 0.6rem; height: 2px; background: var(--accent); }
+.points strong { color: var(--ink); }
+.elsewhere { margin: 1.25rem 0 0; font-size: 0.95rem; color: var(--muted); }
+.more-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+.section-head .more-links .more { font-weight: 600; font-size: 0.95rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.post-list a.row.ext .cat { white-space: nowrap; }
+.post-list a.row.ext:hover .cat { color: var(--accent); }
+
+.roles { list-style: none; margin: 0; padding: 0; }
+.role { padding-block: 1.4rem; border-top: 1px solid var(--line); }
+.role:first-child { border-top: 0; padding-top: 0.25rem; }
+.role-head { display: grid; gap: 0.1rem 2rem; grid-template-columns: 1fr; }
+@media (min-width: 40rem) { .role-head { grid-template-columns: 1fr auto; align-items: baseline; } }
+.role h3 { font-size: 1.1rem; font-weight: 400; letter-spacing: -0.005em; color: var(--ink-2); }
+.role h3 .t { font-weight: 700; color: var(--ink); }
+.role .when { margin: 0; font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
+.role .where, .role .note { margin: 0.1rem 0 0.7rem; color: var(--muted); font-size: 0.92rem; }
+.role ul { margin: 0; padding-left: 1.15rem; color: var(--ink-2); }
+.role li { margin-bottom: 0.45rem; padding-left: 0.2rem; }
+.role li::marker { color: var(--accent); }
+.subhead.first { margin-top: 0; }
+.subsub { font-size: 1.1rem; margin: 2rem 0 0.75rem; }
+.plain { margin: 0; padding-left: 1.15rem; color: var(--ink-2); }
+.plain li { margin-bottom: 0.4rem; padding-left: 0.2rem; }
+.plain li::marker { color: var(--accent); }
+.roles + p { margin-top: 1.5rem; }
